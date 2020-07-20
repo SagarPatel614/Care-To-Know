@@ -1,0 +1,176 @@
+{
+	"info": {
+		"_postman_id": "08e2f8ae-3e94-481e-9702-d0c7689c47d0",
+		"name": "Care To Know PRO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"UserName\":\"test\",\"Password\":\"test\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/account/login",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"account",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Login User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"email\",\r\n  \"emailConfirmed\": null,\r\n  \"userName\": \"dev\",\r\n  \"password\": \"dev\",\r\n  \"lockoutEndDateUtc\": null,\r\n  \"lockoutEnabled\": null,\r\n  \"accessFailedCount\": null,\r\n  \"companyName\": \"PatientCareSolution\",\r\n  \"firstName\": \"John\",\r\n  \"lastName\": \"Doe\",\r\n  \"street1\": \"\",\r\n  \"city\": \"Hamilton\",\r\n  \"provCode\": \"ON\",\r\n  \"postal\": \"\",\r\n  \"country\": \"Canada\",\r\n  \"phoneNumber\": \"\",\r\n  \"notes\": null,\r\n  \"status\": \"true\",\r\n  \"profileQuestion\": null,\r\n  \"profileAnswer\": null\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}/api/LoginProfiles",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"api",
+						"LoginProfiles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"UserId\":1,\"Firstname\":\"John\",\"Lastname\":\"Doe\",\"Email\":\"johndoe@abc.com\",\"SpecialtyIds\":[\"1\"],\"GraduationYear\":\"2019\",\"ProvinceId\":\"1\",\"PreferredLanguage\":\"FR\",\"EmailStatus\":\"Unsubscribed\",\"Status\":\"Retired\",\"CreatedBy\":null,\"DateCreated\":null,\"DateModified\":\"2020-05-29T18:17:50.153\",\"ModifiedBy\":\"admin\",\"Street1\":null,\"City\":null,\"Postal\":null,\"Country\":null,\"PhoneNumber\":null,\"Notes\":\"test\",\"Other\":\"\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/Users/1",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"Users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"Firstname\":\"John\",\"Lastname\":\"John\",\"Email\":\"johndoe@abc.com\",\"SpecialtyIds\":[\"32\",\"27\",\"31\"],\"GraduationYear\":\"2019\",\"ProvinceId\":\"21\",\"PreferredLanguage\":\"EN\",\"EmailStatus\":\"Subscribed\",\"Status\":\"Practicing\",\"CreatedBy\":\"\",\"DateCreated\":\"\",\"DateModified\":\"\",\"ModifiedBy\":\"\",\"Street1\":\"test\",\"City\":\"Hamilton\",\"Postal\":\"L8N\",\"Country\":\"Canada\",\"PhoneNumber\":\"89\",\"Notes\":\"testing\",\"Other\":\"test\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/Users",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"Users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"filter\":{\"FirstName\":\"\",\"LastName\":\"\",\"Email\":\"\",\"ProvinceId\":\"\",\"GraduationYear\":\"\",\"PreferredLanguage\":\"\",\"EmailStatus\":\"\",\"Status\":\"\",\"SpecialtyIds\":\"\"},\"sort\":\"userSpecialty\",\"SortDirection\":\"asc\",\"currentPageIndex\":1,\"PageSize\":25}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/Users/Paged",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"Users",
+						"Paged"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddUserToCustomerIo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/Users/AddUserToCustomerIO",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"Users",
+						"AddUserToCustomerIO"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
